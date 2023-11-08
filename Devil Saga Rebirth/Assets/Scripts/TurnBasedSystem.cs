@@ -14,13 +14,15 @@ public class TurnBasedSystem : MonoBehaviour
     }
 
     public void Update(){ // will loop until either player or enemy dies
-        if (playerTurn){
+        if (playerTurn == true){
+            Debug.Log("Players Turn");
             // Handling player actions
             
 
             // Switch to the enemy's turn when player is done
             playerTurn = false;
         } else{
+            Debug.Log("Enemy Turn");
             // Handle enemy attacks
             
 

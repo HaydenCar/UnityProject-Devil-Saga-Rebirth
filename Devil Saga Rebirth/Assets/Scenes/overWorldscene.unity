@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd78e0416792f704a8624f47c4d49b07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.845
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd78e0416792f704a8624f47c4d49b07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
+  lastSceneName: 
 --- !u!1 &315136619
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +490,7 @@ GameObject:
   - component: {fileID: 981974851}
   - component: {fileID: 981974853}
   - component: {fileID: 981974852}
+  - component: {fileID: 981974854}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -646,6 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: BattleScene
+  lastSceneName: 
 --- !u!65 &981974853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -667,6 +670,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &981974854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981974845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed458b1601320b4eb8b8a91443d7f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Devil
+  maxHP: 500
+  currentHP: 500
+  physicalPower: 25
+  magicalPower: 20
+  defense: 0
+  characterlevel: 1
 --- !u!1 &1136385240
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136385240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0.010000229, y: 1.25, z: -2.5299988}
+  m_LocalPosition: {x: 0.010000229, y: 0.15, z: -2.5299988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1088,7 +1110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856289524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.6, y: 1.212, z: -24.39}
+  m_LocalPosition: {x: -23.47, y: 0.71, z: -13.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1108,6 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: BattleScene
+  lastSceneName: 
 --- !u!1 &2079483090
 GameObject:
   m_ObjectHideFlags: 0
