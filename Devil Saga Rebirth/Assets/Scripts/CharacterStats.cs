@@ -12,14 +12,18 @@ public class CharacterStats : MonoBehaviour
     public int magicalPower; // Can change with level
     public int defense; // Can change with level
     public int characterlevel;
-    public void TakeDamage(int damage){
+
+
+
+    public bool TakeDamage(int damage){
         //Handling damage and death
         currentHP -= damage;
 
         if (currentHP <= 0){
             Debug.Log("YOU ARE DEAD"); //Testing purposes
+            return true;
         } else {
-            return;
+            return false;
         }
     }
 
