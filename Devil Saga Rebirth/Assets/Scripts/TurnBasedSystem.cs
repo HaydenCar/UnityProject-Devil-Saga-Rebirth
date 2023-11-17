@@ -55,6 +55,7 @@ public class TurnBasedSystem : MonoBehaviour
     }
 
     public void OnAttackButton() {
+        Debug.Log("Works ");
         if (state == battleState.PLAYERTURN) {
             StartCoroutine(PlayerPhysicalAttack());
         }
@@ -62,6 +63,7 @@ public class TurnBasedSystem : MonoBehaviour
     }
 
     IEnumerator EnemyTurn() {
+        Debug.Log("Enemy Turn");
         //Handles Enemy turn
         bool isDead = PlayerCharacter.TakeDamage(EnemyCharacter.physicalPower);
 
