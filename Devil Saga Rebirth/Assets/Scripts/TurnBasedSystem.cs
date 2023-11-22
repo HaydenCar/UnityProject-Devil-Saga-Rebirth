@@ -5,6 +5,7 @@ using UnityEngine.TextCore.Text;
 
 public enum battleState { START, PLAYERTURN, ENEMYTURN, WIN, LOSE }
 
+
 public class TurnBasedSystem : MonoBehaviour
 {
     public battleState state;
@@ -13,10 +14,13 @@ public class TurnBasedSystem : MonoBehaviour
 
     CharacterStats PlayerCharacter;
     CharacterStats EnemyCharacter;
+    ChangeScene endGame;
+
 
     public void StartBattle(){
         // Start the battle
         state = battleState.START;
+        SetupBattle();
     }
 
     public void SetupBattle() {
@@ -25,18 +29,33 @@ public class TurnBasedSystem : MonoBehaviour
 
         GameObject EnemyStats =  Instantiate(Enemy);
         EnemyCharacter =  EnemyStats.GetComponent<CharacterStats>();
+        EnemyStats.transform.position = new Vector3(0.9172727f, 0.5f, 1.95f);
+
+        if (EnemyStats != null)
+        {
+            Debug.Log("Enemy instantiated successfully");
+        }
+        else
+        {
+            Debug.LogError("Enemy instantiation failed");
+        }
 
         state = battleState.PLAYERTURN;
-        PlayerTurn();
-    }
-
-    public void PlayerTurn() {
         
 
     }
 
+    private void Start()
+    {
+        SetupBattle();
+    }
+
     IEnumerator PlayerPhysicalAttack() {
         //Damage button handles players physical attacks
+        if (state != battleState.PLAYERTURN)
+        {
+            yield break;
+        }
         bool isDead  = EnemyCharacter.TakeDamage(PlayerCharacter.physicalPower);
 
         //wait
@@ -55,20 +74,28 @@ public class TurnBasedSystem : MonoBehaviour
     }
 
     public void OnAttackButton() {
+
         Debug.Log("Works ");
-        if (state == battleState.PLAYERTURN) {
+        Debug.Log("Enemy HP: " + EnemyCharacter.currentHP);
+        if (state == battleState.PLAYERTURN)
+        {
             StartCoroutine(PlayerPhysicalAttack());
+        }
+        else
+        {
+            Debug.Log("It's not the player's turn!");
         }
 
     }
 
     IEnumerator EnemyTurn() {
         Debug.Log("Enemy Turn");
+        Debug.Log("Player HP: " + PlayerCharacter.currentHP);
         //Handles Enemy turn
         bool isDead = PlayerCharacter.TakeDamage(EnemyCharacter.physicalPower);
 
         //wait
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(5.0f);
 
         if (isDead == true)
         {
@@ -80,18 +107,16 @@ public class TurnBasedSystem : MonoBehaviour
         {
             //continue
             state = battleState.PLAYERTURN;
-            PlayerTurn();
         }
     }
 
     public void EndBattle() {//Ends the battle if win or lose
         if (state == battleState.WIN) { // end and return
-            return;
+            endGame.EndScreen();
         }
         else {
-            return;
+            endGame.EndScreen();
         }
     }
 
 }
-
