@@ -7,7 +7,6 @@ public class ChangeScene : MonoBehaviour
 {
     public string sceneName;
     public string lastSceneName;
-    private int menuScene = 3;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -15,7 +14,7 @@ public class ChangeScene : MonoBehaviour
         lastSceneName = SceneManager.GetActiveScene().name;
         Vector3 storePosition = transform.position;
         SceneManager.LoadScene(sceneName);
-        TurnBasedSystem TBS;
+        //TurnBasedSystem TBS;
         //TBS.SetupBattle();
         Debug.Log("Changed Scene");
         Debug.Log("Last scene name is " + lastSceneName);

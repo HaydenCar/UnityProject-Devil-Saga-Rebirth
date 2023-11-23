@@ -5,14 +5,13 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     //Declaring the stats for both enemy and player
-    public string characterName; //Use for UI????
-    public int maxHP; // Can change with level
-    public int currentHP; // Will be same as max hp at battle start
-    public int physicalPower; // Can change with level
-    public int magicalPower; // Can change with level
-    public int defense; // Can change with level
+    public string characterName; //Use for UI
+    public int maxHP; 
+    public int currentHP; 
+    public int physicalPower; 
+    public int magicalPower; 
+    public int defense; 
     public int characterlevel;
-
 
 
     public bool TakeDamage(int damage){
@@ -20,7 +19,7 @@ public class CharacterStats : MonoBehaviour
         currentHP -= damage;
 
         if (currentHP <= 0){
-            Debug.Log("YOU ARE DEAD"); //Testing purposes
+            Debug.Log("Battle Over"); //Testing purposes
             return true;
         } else {
             return false;

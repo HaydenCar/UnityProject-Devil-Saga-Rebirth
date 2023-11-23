@@ -255,6 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 135803449}
   - component: {fileID: 135803450}
+  - component: {fileID: 135803451}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -292,6 +293,20 @@ MonoBehaviour:
   state: 0
   Player: {fileID: 1084828726816549586, guid: 4067f4a42c66d42998b0fdb8e54f494e, type: 3}
   Enemy: {fileID: 3181414993557906124, guid: d2cfb2572dd9448b7afee9f0a5741d31, type: 3}
+--- !u!114 &135803451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135803447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e6ff3afe7444adf9893f6b4a5e0564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  lastSceneName: 
 --- !u!1 &160491777
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +676,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 432754406}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 135803450}
+        m_TargetAssemblyTypeName: TurnBasedSystem, Assembly-CSharp
+        m_MethodName: OnMagicButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &432754406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,9 +764,9 @@ RectTransform:
   m_Father: {fileID: 1135902703}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -705, y: -313}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 102, y: 123}
   m_SizeDelta: {x: 210, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472759726
@@ -1853,6 +1880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103440304}
   - component: {fileID: 2103440303}
+  - component: {fileID: 2103440305}
   m_Layer: 0
   m_Name: TurnBasedCombat
   m_TagString: Untagged
@@ -1890,3 +1918,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2103440305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103440302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e6ff3afe7444adf9893f6b4a5e0564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  lastSceneName: 
