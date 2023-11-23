@@ -305,8 +305,9 @@ MonoBehaviour:
   characterName: Player
   maxHP: 500
   currentHP: 500
-  physicalPower: 100
-  magicalPower: 50
+  physicalPower: 30
+  magicalPower: 125
+  currentMP: 8
   defense: 50
   characterlevel: 1
 --- !u!95 &4330982064196876342
