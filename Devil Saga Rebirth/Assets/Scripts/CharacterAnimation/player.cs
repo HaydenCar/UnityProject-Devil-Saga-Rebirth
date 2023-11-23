@@ -7,7 +7,7 @@ public class player : MonoBehaviour
 {
     public Animator playerAnim;
 	public Rigidbody playerRigid;
-	public float w_speed, olw_speed, rn_speed, ro_speed;
+	public float w_speed, wb_speed, olw_speed, rn_speed, ro_speed;
 	public bool walking;
 	public Transform playerTrans;
 	
@@ -15,6 +15,9 @@ public class player : MonoBehaviour
 	void FixedUpdate(){
 		if(Input.GetKey(KeyCode.W)){
 			playerRigid.velocity = transform.forward * w_speed * Time.deltaTime;
+		}
+		if(Input.GetKey(KeyCode.S)){
+			playerRigid.velocity= -transform.forward * wb_speed * Time.deltaTime;
 		}
 	}
 	void Update(){
@@ -30,7 +33,16 @@ public class player : MonoBehaviour
 			walking = false;
 			//steps1.SetActive(false);
 		}
-
+		if(Input.GetKeyDown(KeyCode.S)){
+			playerAnim.SetTrigger("walkback");
+			playerAnim.ResetTrigger("idle");
+			//steps1.SetActive(true);
+		}
+		if(Input.GetKeyUp(KeyCode.S)){
+			playerAnim.ResetTrigger("walkback");
+			playerAnim.SetTrigger("idle");
+			//steps1.SetActive(false);
+		}
 
 		// for rotation
 		if(Input.GetKey(KeyCode.A)){
