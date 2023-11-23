@@ -336,6 +336,9 @@
 "Assets/Scripts/CharacterAnimation/player.cs"
 "Assets/Scripts/CharacterAnimation/playerCam.cs"
 "Assets/Scripts/CharacterStats.cs"
+"Assets/Scripts/HealthBar.cs"
+"Assets/Scripts/MainMenu.cs"
+"Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/TurnBasedSystem.cs"
 "Assets/Scripts/UIScripts/ButtonsUI.cs"
 -langversion:9.0
