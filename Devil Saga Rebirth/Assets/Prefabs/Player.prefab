@@ -263,8 +263,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7203525714001198528}
   - component: {fileID: 3410535351236496641}
-  - component: {fileID: 4330982064196876342}
-  - component: {fileID: 6624889679662023837}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -310,43 +308,6 @@ MonoBehaviour:
   currentMP: 8
   defense: 50
   characterlevel: 1
---- !u!95 &4330982064196876342
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084828726816549586}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!111 &6624889679662023837
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084828726816549586}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 72b1ef7b96d393048b0bde2dbf0b66aa, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 72b1ef7b96d393048b0bde2dbf0b66aa, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &1238250589366078119
 GameObject:
   m_ObjectHideFlags: 0

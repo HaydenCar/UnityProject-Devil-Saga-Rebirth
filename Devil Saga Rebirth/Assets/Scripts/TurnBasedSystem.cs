@@ -207,7 +207,7 @@ public class TurnBasedSystem : MonoBehaviour
             Debug.Log("You Win");
             endGame.EndScreen();
         }
-        else if (PlayerCharacter.currentHP == 0) {
+        if (PlayerCharacter.currentHP == 0) {
             Debug.Log("You Lose");
             endGame.EndScreen();
         }
