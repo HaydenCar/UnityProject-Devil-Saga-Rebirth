@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+	//variables
     public Animator playerAnim;
 	public Rigidbody playerRigid;
 	public float w_speed, wb_speed, olw_speed, rn_speed, ro_speed;
@@ -20,28 +21,24 @@ public class player : MonoBehaviour
 			playerRigid.velocity= -transform.forward * wb_speed * Time.deltaTime;
 		}
 	}
-	void Update(){
+	void Update(){	//animations
 		if(Input.GetKeyDown(KeyCode.W)){
 			playerAnim.SetTrigger("walk");
 			playerAnim.ResetTrigger("idle");
-			walking = true;
-			//steps1.SetActive(true);
+			walking = true;	
 		}
 		if(Input.GetKeyUp(KeyCode.W)){
 			playerAnim.ResetTrigger("walk");
 			playerAnim.SetTrigger("idle");
-			walking = false;
-			//steps1.SetActive(false);
+			walking = false;	
 		}
 		if(Input.GetKeyDown(KeyCode.S)){
 			playerAnim.SetTrigger("walkback");
-			playerAnim.ResetTrigger("idle");
-			//steps1.SetActive(true);
+			playerAnim.ResetTrigger("idle");	
 		}
 		if(Input.GetKeyUp(KeyCode.S)){
 			playerAnim.ResetTrigger("walkback");
 			playerAnim.SetTrigger("idle");
-			//steps1.SetActive(false);
 		}
 
 		// for rotation

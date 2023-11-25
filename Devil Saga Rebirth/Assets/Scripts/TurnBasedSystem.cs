@@ -74,26 +74,47 @@ public class TurnBasedSystem : MonoBehaviour
         //Called when player uses magic attack
         if (!isPlayerTurn)
         {
-            yield break;
+            Debug.Log("Not your Turn");
         }
         else
         {
-            bool isDead = EnemyCharacter.TakeDamage(PlayerCharacter.magicalPower);
+            if(PlayerCharacter.currentMP >= 4){
+                PlayerCharacter.currentMP -= 4;
+                Debug.Log("Current MP: "+ PlayerCharacter.currentMP);
+                bool isDead = EnemyCharacter.TakeDamage(PlayerCharacter.magicalPower);
 
-            isPlayerTurn = false;
+                isPlayerTurn = false;
+                
+                yield return new WaitForSeconds(2.0f);
 
-            if (isDead == true)
-            {
-                // Call end battle function if player is dead
-                EndBattle();
-            }
-            else
-            {
-                // Continue
-                StartCoroutine(EnemyTurn());
-                Debug.Log("Enemy HP: " + EnemyCharacter.currentHP);
-            }
+                if (isDead == true)
+                {
+                   // Call end battle function if player is dead
+                    EndBattle();
+                }
+                else
+                {
+                    // Continue
+                    StartCoroutine(EnemyTurn());
+                    Debug.Log("Enemy HP: " + EnemyCharacter.currentHP);
+                }
+            } else Debug.Log("No MP: " + PlayerCharacter.currentMP);
         }
+    }
+
+    IEnumerator PlayerGuard() {
+        //Called when player uses magic attack
+        if (!isPlayerTurn)
+        {
+            Debug.Log("Not your Turn");
+        }
+        else
+        {
+                isPlayerTurn = false;
+                yield return new WaitForSeconds(2.0f);
+                StartCoroutine(EnemyTurnGuard());
+                Debug.Log("Enemy HP: " + EnemyCharacter.currentHP);
+        }                 
     }
 
     public void OnAttackButton() {
@@ -126,6 +147,22 @@ public class TurnBasedSystem : MonoBehaviour
         }
     }
 
+    public void OnGuardButton() {
+        //Used to sort combat state and call damage
+        Debug.Log("Works ");
+        Debug.Log("Enemy HP: " + EnemyCharacter.currentHP);
+
+        if (!isPlayerTurn)
+        {
+            Debug.Log("It's not the player's turn!");
+        }
+        else
+        {
+            PlayerCharacter.currentMP += 2;
+            StartCoroutine(PlayerGuard());
+        }
+    }
+
     IEnumerator EnemyTurn() {
         //Automates the enemies turn
         Debug.Log("Enemy Turn");
@@ -144,6 +181,26 @@ public class TurnBasedSystem : MonoBehaviour
             isPlayerTurn = true;
         }
     }
+
+    IEnumerator EnemyTurnGuard() {
+        //Automates the enemies turn
+        Debug.Log("Enemy Turn");
+        Debug.Log("Player HP: " + PlayerCharacter.currentHP);
+    
+        yield return new WaitForSeconds(2.0f);
+
+        bool isDead = PlayerCharacter.TakeGuardDamage(EnemyCharacter.physicalPower);
+
+        if (isDead == true)
+        {
+            EndBattle();
+        }
+        else
+        {
+            isPlayerTurn = true;
+        }
+    }
+
 
     public void EndBattle() {//Ends the battle if win or lose
         if (EnemyCharacter.currentHP == 0) {

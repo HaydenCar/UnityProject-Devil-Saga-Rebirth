@@ -156,6 +156,7 @@ MonoBehaviour:
   playerAnim: {fileID: 2336476293261250261}
   playerRigid: {fileID: 653849343959144238}
   w_speed: 200
+  wb_speed: 0
   olw_speed: 200
   rn_speed: 120
   ro_speed: 90
@@ -213,6 +214,7 @@ MonoBehaviour:
   currentHP: 500
   physicalPower: 25
   magicalPower: 20
+  currentMP: 4
   defense: 0
   characterlevel: 1
 --- !u!1 &3797363210048354019
