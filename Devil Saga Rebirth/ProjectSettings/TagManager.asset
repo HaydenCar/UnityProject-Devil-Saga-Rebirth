@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Enemy Health
+  - Player Health
   layers:
   - Default
   - TransparentFX

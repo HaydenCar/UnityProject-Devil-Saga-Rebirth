@@ -15,12 +15,11 @@ public class CharacterStats : MonoBehaviour
     public int characterlevel;
 
     public HealthBar healthBar;
-    
+
     private void Start()
     {
         currentHP = maxHP;
         healthBar.SetMaxHP(maxHP);
-
     }
     public bool TakeDamage(int damage){
         //Handling damage and death
