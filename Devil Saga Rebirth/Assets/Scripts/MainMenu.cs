@@ -19,4 +19,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(3);
     }
+
+    public void OpenGit()
+    {
+        Application.OpenURL("https://github.com/HaydenCar/UnityProject-Devil-Saga-Rebirth");
+    }
 }
