@@ -14,10 +14,19 @@ public class CharacterStats : MonoBehaviour
     public int defense; 
     public int characterlevel;
 
+    public HealthBar healthBar;
+    
+    private void Start()
+    {
+        currentHP = maxHP;
+        healthBar.SetMaxHP(maxHP);
 
+    }
     public bool TakeDamage(int damage){
         //Handling damage and death
         currentHP -= damage;
+
+        healthBar.SetHP(currentHP);
 
         if (currentHP <= 0){
             Debug.Log("Battle Over"); //Testing purposes
@@ -30,6 +39,8 @@ public class CharacterStats : MonoBehaviour
     public bool TakeGuardDamage(int damage){
         //Handling damage and death
         currentHP -= (damage / 2);
+
+        healthBar.SetHP(currentHP);
 
         if (currentHP <= 0){
             Debug.Log("Battle Over"); //Testing purposes

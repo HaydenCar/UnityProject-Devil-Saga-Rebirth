@@ -881,8 +881,10 @@ MonoBehaviour:
   currentHP: 500
   physicalPower: 50
   magicalPower: 50
+  currentMP: 0
   defense: 10
   characterlevel: 1
+  healthBar: {fileID: 0}
 --- !u!1 &3294970320598867712
 GameObject:
   m_ObjectHideFlags: 0

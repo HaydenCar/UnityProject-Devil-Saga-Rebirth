@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    Slider hpSlider;
+    public Slider hpSlider;
 
     private void Start()
     {
         hpSlider = GetComponent<Slider>();
     }
 
-    public void SetMaxHP(int maxHP)
+    public void SetMaxHP(int currentHP)
     {
-        hpSlider.maxValue = maxHP;
-        hpSlider.value = maxHP;
+        hpSlider.maxValue = currentHP;
+        hpSlider.value = currentHP;
     }
     public void SetHP(int currentHP)
     {

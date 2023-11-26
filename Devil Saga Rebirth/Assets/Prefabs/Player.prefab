@@ -308,6 +308,7 @@ MonoBehaviour:
   currentMP: 8
   defense: 50
   characterlevel: 1
+  healthBar: {fileID: 0}
 --- !u!1 &1238250589366078119
 GameObject:
   m_ObjectHideFlags: 0
