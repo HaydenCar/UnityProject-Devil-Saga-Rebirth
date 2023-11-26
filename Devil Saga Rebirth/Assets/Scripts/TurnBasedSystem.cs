@@ -203,11 +203,11 @@ public class TurnBasedSystem : MonoBehaviour
 
 
     public void EndBattle() {//Ends the battle if win or lose
-        if (EnemyCharacter.currentHP == 0) {
+        if (EnemyCharacter.currentHP <= 0) {
             Debug.Log("You Win");
             endGame.EndScreen();
         }
-        if (PlayerCharacter.currentHP == 0) {
+        if (PlayerCharacter.currentHP <= 0) {
             Debug.Log("You Lose");
             endGame.EndScreen();
         }
