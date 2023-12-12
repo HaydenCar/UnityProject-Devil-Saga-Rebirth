@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 
 
@@ -205,11 +206,11 @@ public class TurnBasedSystem : MonoBehaviour
     public void EndBattle() {//Ends the battle if win or lose
         if (EnemyCharacter.currentHP <= 0) {
             Debug.Log("You Win");
-            endGame.EndScreen();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         if (PlayerCharacter.currentHP <= 0) {
             Debug.Log("You Lose");
-            endGame.EndScreen();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
