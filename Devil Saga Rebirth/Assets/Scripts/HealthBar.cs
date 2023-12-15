@@ -7,18 +7,14 @@ public class HealthBar : MonoBehaviour
 {
     public Slider hpSlider;
 
-    private void Start()
+    public void SetMaxHP(CharacterStats character)
     {
-        hpSlider = GetComponent<Slider>();
+        hpSlider.maxValue = character.maxHP;
+        hpSlider.value = character.currentHP;
     }
 
-    public void SetMaxHP(int currentHP)
+    public void SetHP(int hp)
     {
-        hpSlider.maxValue = currentHP;
-        hpSlider.value = currentHP;
-    }
-    public void SetHP(int currentHP)
-    {
-        hpSlider.value = currentHP;
+        hpSlider.value = hp;
     }
 }

@@ -14,6 +14,9 @@ public class TurnBasedSystem : MonoBehaviour
     CharacterStats EnemyCharacter;
     ChangeScene endGame;
 
+    public HealthBar playerHP;
+    public HealthBar enemyHP;
+
     private bool isPlayerTurn = true;
 
     public void SetupBattle() {
@@ -24,6 +27,9 @@ public class TurnBasedSystem : MonoBehaviour
         GameObject EnemyStats =  Instantiate(Enemy);
         EnemyCharacter =  EnemyStats.GetComponent<CharacterStats>();
         EnemyStats.transform.position = new Vector3(0.9172727f, 0.5f, 1.95f);
+
+        playerHP.SetMaxHP(PlayerCharacter);
+        enemyHP.SetMaxHP(EnemyCharacter);
 
         if (EnemyStats != null)
         {
@@ -52,6 +58,7 @@ public class TurnBasedSystem : MonoBehaviour
         else
         {
             bool isDead = EnemyCharacter.TakeDamage(PlayerCharacter.physicalPower);
+            enemyHP.SetHP(EnemyCharacter.currentHP);
 
             isPlayerTurn = false;
 
@@ -83,6 +90,7 @@ public class TurnBasedSystem : MonoBehaviour
                 PlayerCharacter.currentMP -= 4;
                 Debug.Log("Current MP: "+ PlayerCharacter.currentMP);
                 bool isDead = EnemyCharacter.TakeDamage(PlayerCharacter.magicalPower);
+                enemyHP.SetHP(EnemyCharacter.currentHP);
 
                 isPlayerTurn = false;
                 
@@ -172,6 +180,7 @@ public class TurnBasedSystem : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         bool isDead = PlayerCharacter.TakeDamage(EnemyCharacter.physicalPower);
+        playerHP.SetHP(PlayerCharacter.currentHP);
 
         if (isDead == true)
         {
