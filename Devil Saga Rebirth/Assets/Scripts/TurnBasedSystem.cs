@@ -16,6 +16,7 @@ public class TurnBasedSystem : MonoBehaviour
 
     public HealthBar playerHP;
     public HealthBar enemyHP;
+    public ManaBar playerMP;
 
     private bool isPlayerTurn = true;
 
@@ -91,6 +92,7 @@ public class TurnBasedSystem : MonoBehaviour
                 Debug.Log("Current MP: "+ PlayerCharacter.currentMP);
                 bool isDead = EnemyCharacter.TakeDamage(PlayerCharacter.magicalPower);
                 enemyHP.SetHP(EnemyCharacter.currentHP);
+                playerMP.SetMP(PlayerCharacter.currentMP);
 
                 isPlayerTurn = false;
                 
@@ -168,6 +170,7 @@ public class TurnBasedSystem : MonoBehaviour
         else
         {
             PlayerCharacter.currentMP += 2;
+            playerMP.SetMP(PlayerCharacter.currentMP);
             StartCoroutine(PlayerGuard());
         }
     }
@@ -200,6 +203,7 @@ public class TurnBasedSystem : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         bool isDead = PlayerCharacter.TakeGuardDamage(EnemyCharacter.physicalPower);
+        playerHP.SetHP(PlayerCharacter.currentHP);
 
         if (isDead == true)
         {

@@ -11,10 +11,11 @@ public class HealthBar : MonoBehaviour
     {
         hpSlider.maxValue = character.maxHP;
         hpSlider.value = character.currentHP;
-    }
+}
 
     public void SetHP(int hp)
     {
         hpSlider.value = hp;
     }
+
 }
