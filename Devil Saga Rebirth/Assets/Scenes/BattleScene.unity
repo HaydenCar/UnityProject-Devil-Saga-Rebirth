@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec2724e3232d0a488f4fcc8e0da3229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 9128912570902702221, guid: e311f284f3828b24995a15ca65fa3d04, type: 3}
-  Enemy: {fileID: 5930231382038538738, guid: a55b9c2ae0e7b864fb125749805f5b31, type: 3}
+  Player: {fileID: 238701315527390945, guid: 782bf0a1dd3d646aababbe8927742aab, type: 3}
+  Enemy: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   playerHP: {fileID: 2113313545}
   enemyHP: {fileID: 286525523}
   playerMP: {fileID: 303275616}
@@ -3112,8 +3112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec2724e3232d0a488f4fcc8e0da3229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 9128912570902702221, guid: e311f284f3828b24995a15ca65fa3d04, type: 3}
-  Enemy: {fileID: 5930231382038538738, guid: a55b9c2ae0e7b864fb125749805f5b31, type: 3}
+  Player: {fileID: 238701315527390945, guid: 782bf0a1dd3d646aababbe8927742aab, type: 3}
+  Enemy: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   playerHP: {fileID: 2113313545}
   enemyHP: {fileID: 286525523}
   playerMP: {fileID: 303275616}

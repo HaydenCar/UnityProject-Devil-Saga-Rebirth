@@ -263,6 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7203525714001198528}
   - component: {fileID: 3410535351236496641}
+  - component: {fileID: 8677063181453412747}
   m_Layer: 0
   m_Name: Enemy battle2
   m_TagString: Player
@@ -309,6 +310,27 @@ MonoBehaviour:
   defense: 50
   characterlevel: 1
   healthBar: {fileID: 0}
+--- !u!95 &8677063181453412747
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084828726816549586}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 7e0043553097dc34e867f52b292bb164, type: 3}
+  m_Controller: {fileID: 9100000, guid: 986efd23f2d6c5445ab3891f7d3086ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1238250589366078119
 GameObject:
   m_ObjectHideFlags: 0

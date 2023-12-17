@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec2724e3232d0a488f4fcc8e0da3229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 9128912570902702221, guid: 6a589540c13f44e419ff546062087413, type: 3}
+  Player: {fileID: 238701315527390945, guid: 782bf0a1dd3d646aababbe8927742aab, type: 3}
   Enemy: {fileID: 1981860918171908, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
   playerHP: {fileID: 2113313545}
   enemyHP: {fileID: 286525523}
@@ -3112,7 +3112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec2724e3232d0a488f4fcc8e0da3229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 9128912570902702221, guid: 6a589540c13f44e419ff546062087413, type: 3}
+  Player: {fileID: 238701315527390945, guid: 782bf0a1dd3d646aababbe8927742aab, type: 3}
   Enemy: {fileID: 1981860918171908, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
   playerHP: {fileID: 2113313545}
   enemyHP: {fileID: 286525523}
