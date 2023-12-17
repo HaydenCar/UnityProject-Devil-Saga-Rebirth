@@ -20,6 +20,9 @@ public class TurnBasedSystem : MonoBehaviour
 
     private bool isPlayerTurn = true;
 
+    private int itemCount = 2;
+    private int itemHeal = 20;
+
     public void SetupBattle() {
         //Sets up battle by instantating player and enemy
         GameObject PlayerStats =  Instantiate(Player);
@@ -47,7 +50,6 @@ public class TurnBasedSystem : MonoBehaviour
         //Calls setup battle and gets endGame scene
         endGame = GetComponent<ChangeScene>();
         SetupBattle();
-
     }
 
     IEnumerator PlayerPhysicalAttack() {
@@ -114,7 +116,7 @@ public class TurnBasedSystem : MonoBehaviour
     }
 
     IEnumerator PlayerGuard() {
-        //Called when player uses magic attack
+        //Called when player uses Guard
         if (!isPlayerTurn)
         {
             Debug.Log("Not your Turn");
@@ -127,6 +129,7 @@ public class TurnBasedSystem : MonoBehaviour
                 Debug.Log("Enemy HP: " + EnemyCharacter.currentHP);
         }                 
     }
+
 
     public void OnAttackButton() {
         //Used to sort combat state and call damage
@@ -159,8 +162,8 @@ public class TurnBasedSystem : MonoBehaviour
     }
 
     public void OnGuardButton() {
-        //Used to sort combat state and call damage
-        Debug.Log("Works ");
+        //Used to sort combat state and call damage and add MP
+        Debug.Log("Guard Works ");
         Debug.Log("Enemy HP: " + EnemyCharacter.currentHP);
 
         if (!isPlayerTurn)
@@ -172,6 +175,20 @@ public class TurnBasedSystem : MonoBehaviour
             PlayerCharacter.currentMP += 2;
             playerMP.SetMP(PlayerCharacter.currentMP);
             StartCoroutine(PlayerGuard());
+        }
+    }
+
+    public void OnItemButton() {
+        //Used to sort combat state and add health using item
+        Debug.Log("Item Works ");
+
+        if (!isPlayerTurn)
+        {
+            Debug.Log("It's not the player's turn!");
+        }
+        else if(itemCount > 0){
+            PlayerCharacter.currentHP += itemHeal;
+            playerHP.SetHP(PlayerCharacter.currentHP);
         }
     }
 
@@ -202,7 +219,7 @@ public class TurnBasedSystem : MonoBehaviour
     
         yield return new WaitForSeconds(2.0f);
 
-        bool isDead = PlayerCharacter.TakeGuardDamage(EnemyCharacter.physicalPower);
+        bool isDead = PlayerCharacter.TakeGuardDamage(EnemyCharacter.physicalPower / 2);
         playerHP.SetHP(PlayerCharacter.currentHP);
 
         if (isDead == true)
@@ -223,7 +240,7 @@ public class TurnBasedSystem : MonoBehaviour
         }
         if (PlayerCharacter.currentHP <= 0) {
             Debug.Log("You Lose");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(0);
         }
     }
 }

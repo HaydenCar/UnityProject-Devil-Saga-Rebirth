@@ -301,9 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Player
-  maxHP: 500
-  currentHP: 500
-  physicalPower: 30
+  maxHP: 750
+  currentHP: 750
+  physicalPower: 40
   magicalPower: 125
   currentMP: 8
   defense: 50

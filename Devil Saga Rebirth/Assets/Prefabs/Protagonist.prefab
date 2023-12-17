@@ -168,13 +168,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Devil
-  maxHP: 500
+  maxHP: 750
   currentHP: 500
-  physicalPower: 25
+  physicalPower: 40
   magicalPower: 20
   currentMP: 4
   defense: 0
-  characterlevel: 1
+  characterlevel: 2
   healthBar: {fileID: 0}
 --- !u!54 &2317947523902589356
 Rigidbody:

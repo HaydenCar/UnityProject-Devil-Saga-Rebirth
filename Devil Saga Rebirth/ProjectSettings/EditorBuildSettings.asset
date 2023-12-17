@@ -18,6 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/City 1.unity
     guid: 280ace635f604514cb3dcb1b772d75fe
   - enabled: 1
+    path: Assets/Scenes/BattleScene 1.unity
+    guid: 8cd8d2170d9fd4348856bb4294cf3ab2
+  - enabled: 1
+    path: Assets/Scenes/City 2.unity
+    guid: f4314f5e301621644b48ea7ef7c886aa
+  - enabled: 1
+    path: Assets/Scenes/BattleScene 2.unity
+    guid: db803e01779b96d4c826e2538aeffab6
+  - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: e75b5e5eb7eee7c479b06957a1798ef0
   - enabled: 1

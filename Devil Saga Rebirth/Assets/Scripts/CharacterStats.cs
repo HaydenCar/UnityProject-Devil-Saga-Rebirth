@@ -33,7 +33,8 @@ public class CharacterStats : MonoBehaviour
 
     public bool TakeGuardDamage(int damage){
         //Handling damage and death
-        currentHP -= (damage / 2);
+        int guardDamage = damage / 2;
+        currentHP -= guardDamage;
 
         if (currentHP <= 0){
             Debug.Log("Battle Over"); //Testing purposes
