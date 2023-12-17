@@ -31,6 +31,10 @@ public class TurnBasedSystem : MonoBehaviour
         GameObject EnemyStats =  Instantiate(Enemy);
         EnemyCharacter =  EnemyStats.GetComponent<CharacterStats>();
         EnemyStats.transform.position = new Vector3(0.9172727f, 0.5f, 1.95f);
+        Quaternion spawnRotation = Quaternion.Euler(0f, 220f, 0f); //for enemy spawn rotation
+
+        
+        EnemyStats.transform.rotation = spawnRotation;
 
         playerHP.SetMaxHP(PlayerCharacter);
         enemyHP.SetMaxHP(EnemyCharacter);
