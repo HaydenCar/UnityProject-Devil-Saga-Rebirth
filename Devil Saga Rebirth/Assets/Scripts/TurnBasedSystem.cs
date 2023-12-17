@@ -189,6 +189,7 @@ public class TurnBasedSystem : MonoBehaviour
         else if(itemCount > 0){
             PlayerCharacter.currentHP += itemHeal;
             playerHP.SetHP(PlayerCharacter.currentHP);
+            itemCount -= 1;
         }
     }
 
