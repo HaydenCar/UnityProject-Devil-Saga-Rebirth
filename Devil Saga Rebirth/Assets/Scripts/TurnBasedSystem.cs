@@ -12,6 +12,7 @@ public class TurnBasedSystem : MonoBehaviour
 
     CharacterStats PlayerCharacter;
     CharacterStats EnemyCharacter;
+    private AudioSource audioSource;
     ChangeScene endGame;
 
     public HealthBar playerHP;
@@ -52,6 +53,7 @@ public class TurnBasedSystem : MonoBehaviour
 
     private void Start() {
         //Calls setup battle and gets endGame scene
+        audioSource = GetComponent<AudioSource>();
         endGame = GetComponent<ChangeScene>();
         SetupBattle();
     }
@@ -80,6 +82,7 @@ public class TurnBasedSystem : MonoBehaviour
             {
                 StartCoroutine(EnemyTurn());
                 Debug.Log("Enemy HP: " + EnemyCharacter.currentHP);
+                audioSource.Play();
             }
         }
     }
